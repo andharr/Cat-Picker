@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Cat Viewer</title>
+</head>
+<body>
+    <header>
+    <h1>Cat Viewer</h1>
+    <h2 id="catName">Cat Name</h2>
+    </header>
+
+    <main>
+        <div class="left-side">
+            <h2>Choose A Breed</h2>
+            <select name="" id="selection">
+                <option value="starter" selected>Select Me!</option>
+            </select>
+            <img src="https://placekitten.com/200/300" class="cat image" alt="picture of a kitten">
+        </div>
+        <div class="right-side">
+            <h2>Characteristics</h2>
+            <div class="character">
+                <div>
+                <p>Origin:  </p> <span id="origin"></span>
+                </div>
+                <p>Description:</p> <span id="description"></span>
+                <p>Temperament:</p> <span id="temperament"></span>
+                <div>
+                <p>Life Span:</p> <span id="life-span"></span>
+                </div>
+                <div>
+                <p>More Info:</p> <a id="moreInfo" href="msdfsdoreInfo"></a>
+                </div> 
+            </div>
+        </div>
+    </main>
+    
+</body>
+<script src="main.js"></script>
+</html>
