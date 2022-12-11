@@ -9,7 +9,6 @@ let origin = document.querySelector('#origin')
 let description = document.querySelector('#description')
 let temperament = document.querySelector('#temperament')
 let moreInfo = document.getElementById('moreInfo')
-//let moreInfo = document.querySelector("[href='moreInfo']")
 let catName = document.querySelector('#catName')
 
 
@@ -19,11 +18,7 @@ let catName = document.querySelector('#catName')
     })
 
     .then(data => {
-        // const breedsObject = data.message; //turn the message into an object
-        //const breedsArray = Object.keys(breedsObject) //turn the object into an array
-        //console.log(breedsArray[51].name)
         breedsArray = data
-        //console.log(breedsArray)
 
         for (let i = 0; i < breedsArray.length; i++){
             const breed = breedsArray[i]
@@ -35,23 +30,21 @@ let catName = document.querySelector('#catName')
             option.value = i
             //Mayanwolfe uses this instead:
             //option.value = breedsArray[i]
+
             option.innerText = breed.name
             
             selector.appendChild(option)
-
-            //image.scr = breed.image.url
         }
     })
 
 selector.addEventListener('change', event => {
-    //console.log(event.target.value)
-    //console.log(breedsArray[event.target.value.name])
     image.src = breedsArray[event.target.value].image.url
     lifespan.innerText = breedsArray[event.target.value].life_span
     origin.innerText = breedsArray[event.target.value].origin
     description.innerText = breedsArray[event.target.value].description
     temperament.innerText = breedsArray[event.target.value].temperament
-    moreInfo.textContent = breedsArray[event.target.value].wikipedia_url
-    moreInfo.pathname = breedsArray[event.target.value].wikipedia_url
+    moreInfo.innerText = 'More Information'
     catName.innerText = breedsArray[event.target.value].name
+
+    document.getElementById('moreInfo').href = breedsArray[event.target.value].wikipedia_url
 })
